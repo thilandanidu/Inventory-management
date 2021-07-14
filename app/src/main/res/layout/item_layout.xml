@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1,2,3,4"
+        android:layout_margin="8dp"
+        tools:ignore="MissingConstraints">
+
+        <TableRow>
+            <TextView
+                android:id="@+id/code_tv"
+                android:textColor="#565454 "
+                android:textSize="16sp"
+                android:padding="10dp"
+                android:gravity="center"
+                android:layout_column="1"/>
+            <TextView
+                android:id="@+id/name_tv"
+                android:textColor="#565454 "
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_column="1"/>
+            <TextView
+                android:id="@+id/quantity_tv"
+                android:textColor="#565454 "
+                android:textSize="16sp"
+                android:padding="10dp"
+                android:gravity="center"
+                android:layout_column="1"/>
+            <TextView
+                android:id="@+id/totalV_tv"
+                android:textColor="#565454 "
+                android:textSize="16sp"
+                android:padding="10dp"
+                android:gravity="center"
+                android:layout_column="1"/>
+
+        </TableRow>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

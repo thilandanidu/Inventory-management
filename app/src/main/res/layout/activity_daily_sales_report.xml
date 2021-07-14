@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".DailySalesReportActivity">
+
+    <Button
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_baseline_arrow_back_24"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toStartOf="@+id/dailysales_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="48dp" />
+
+    <TextView
+        android:id="@+id/dailysales_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Daily Sales Report"
+        android:textColor="#565454 "
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/datepicker_btn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/back_btn"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="55dp" />
+
+<!--    //-->
+
+    <Button
+        android:id="@+id/datepicker_btn"
+        style="?android:spinnerStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="openDatePicker"
+        android:text="JAN 01 2020"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/calender_btn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/dailysales_textView"
+        tools:layout_editor_absoluteY="61dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/calender_btn"
+        android:layout_width="74dp"
+        android:layout_height="75dp"
+        android:background="@drawable/calender"
+        app:layout_constraintEnd_toStartOf="@+id/print_btn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/datepicker_btn"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="55dp" />
+
+    <!--    ////-->
+
+    <Button
+        android:id="@+id/print_btn"
+        android:layout_width="114dp"
+        android:layout_height="72dp"
+        android:background="@drawable/print_button_style"
+        android:text="Print"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/calender_btn"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="48dp" />
+
+<!--    List View-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/calender_btn"
+        tools:ignore="MissingConstraints">
+
+        <TableLayout
+            android:id="@+id/table_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:stretchColumns="1,2,3,4">
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Code"
+                    android:textColor="#565454 "
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_column="1"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Item Name"
+                    android:textColor="#565454 "
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_column="1"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Quantity"
+                    android:textColor="#565454 "
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_column="1"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Total Value"
+                    android:textColor="#565454 "
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </TableLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
