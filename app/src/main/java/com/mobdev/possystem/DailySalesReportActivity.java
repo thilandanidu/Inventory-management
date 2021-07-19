@@ -12,6 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 
+import com.mobdev.possystem.AdapterClasses.DailySalesAdapter;
+import com.mobdev.possystem.ModelClasses.DailySalesModel;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -19,7 +22,7 @@ import java.util.List;
 public class DailySalesReportActivity extends AppCompatActivity
 {
     RecyclerView recycler_view;
-    PaymentAdapter adapter;
+    DailySalesAdapter adapter;
 
     // calendar
     private DatePickerDialog datePickerDialog;
@@ -27,9 +30,11 @@ public class DailySalesReportActivity extends AppCompatActivity
     private Button backButton, printButton;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_sales_report);
+
 
         //// initialize
         backButton = findViewById(R.id.back_btn);
@@ -63,17 +68,37 @@ public class DailySalesReportActivity extends AppCompatActivity
     private void setRecyclerView() {
         recycler_view.setHasFixedSize(true);
         recycler_view.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new PaymentAdapter(this, getList());
+        adapter = new DailySalesAdapter(this, getList());
         recycler_view.setAdapter(adapter);
     }
 
-    private List<PaymentModel> getList() {
-        List<PaymentModel> payment_list = new ArrayList<>();
-        payment_list.add(new PaymentModel("001","Wire","30","100000"));
-        payment_list.add(new PaymentModel("200","Bulb","20","230000"));
-        payment_list.add(new PaymentModel("563","Cement","60","140000"));
-        payment_list.add(new PaymentModel("365","Sand","20","1090000"));
-        payment_list.add(new PaymentModel("565","Hammer","70","90000"));
+    private List<DailySalesModel> getList() {
+        List<DailySalesModel> payment_list = new ArrayList<>();
+        payment_list.add(new DailySalesModel("0001","Nail 6inch box","02","100"));
+        payment_list.add(new DailySalesModel("0200","Rhino roofing sheets","20","23000"));
+        payment_list.add(new DailySalesModel("0563","Arpico Hybrid tank 1000L","60","14000"));
+        payment_list.add(new DailySalesModel("0365","Philip srews","20","5930"));
+        payment_list.add(new DailySalesModel("0565","Multibond Contact Hose","70","9070"));
+        payment_list.add(new DailySalesModel("0001","Nail 6inch box","02","100"));
+        payment_list.add(new DailySalesModel("0200","Rhino roofing sheets","20","23000"));
+        payment_list.add(new DailySalesModel("0563","Arpico Hybrid tank 1000L","60","14000"));
+        payment_list.add(new DailySalesModel("0365","Philip srews","20","5930"));
+        payment_list.add(new DailySalesModel("0565","Multibond Contact Hose","70","9070"));
+        payment_list.add(new DailySalesModel("0001","Nail 6inch box","02","100"));
+        payment_list.add(new DailySalesModel("0200","Rhino roofing sheets","20","23000"));
+        payment_list.add(new DailySalesModel("0563","Arpico Hybrid tank 1000L","60","14000"));
+        payment_list.add(new DailySalesModel("0365","Philip srews","20","5930"));
+        payment_list.add(new DailySalesModel("0565","Multibond Contact Hose","70","9070"));
+        payment_list.add(new DailySalesModel("0001","Nail 6inch box","02","100"));
+        payment_list.add(new DailySalesModel("0200","Rhino roofing sheets","20","23000"));
+        payment_list.add(new DailySalesModel("0563","Arpico Hybrid tank 1000L","60","14000"));
+        payment_list.add(new DailySalesModel("0365","Philip srews","20","5930"));
+        payment_list.add(new DailySalesModel("0565","Multibond Contact Hose","70","9070"));
+        payment_list.add(new DailySalesModel("0001","Nail 6inch box","02","100"));
+        payment_list.add(new DailySalesModel("0200","Rhino roofing sheets","20","23000"));
+        payment_list.add(new DailySalesModel("0563","Arpico Hybrid tank 1000L","60","14000"));
+        payment_list.add(new DailySalesModel("0365","Philip srews","20","5930"));
+        payment_list.add(new DailySalesModel("0565","Multibond Contact Hose","70","9070"));
         return payment_list;
     }
 

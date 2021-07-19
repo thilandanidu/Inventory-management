@@ -1,6 +1,6 @@
-package com.mobdev.possystem;
+package com.mobdev.possystem.ModelClasses;
 
-public class PaymentModel
+public class DailySalesModel
 {
     String code;
     String name;
@@ -8,7 +8,7 @@ public class PaymentModel
     String totalV;
 
    //constructor with parameters
-    public PaymentModel(String code, String name, String quantity, String totalV) {
+    public DailySalesModel(String code, String name, String quantity, String totalV) {
         this.code = code;
         this.name = name;
         this.quantity = quantity;

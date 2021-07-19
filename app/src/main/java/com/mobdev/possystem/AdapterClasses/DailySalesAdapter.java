@@ -1,4 +1,4 @@
-package com.mobdev.possystem;
+package com.mobdev.possystem.AdapterClasses;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,18 +9,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
+import com.mobdev.possystem.ModelClasses.DailySalesModel;
+import com.mobdev.possystem.R;
 
 import java.util.List;
 
-public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.ViewHolder>
+public class DailySalesAdapter extends RecyclerView.Adapter<DailySalesAdapter.ViewHolder>
 {
     //
     Context context;
-    List<PaymentModel> payment_list;
+    List<DailySalesModel> payment_list;
 
     //constructor context
-    public PaymentAdapter(Context context, List<PaymentModel> payment_list) {
+    public DailySalesAdapter(Context context, List<DailySalesModel> payment_list) {
         this.context = context;
         this.payment_list = payment_list;
     }
@@ -38,7 +39,7 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position)
     {
         if (payment_list != null && payment_list.size() > 0){
-            PaymentModel model = payment_list.get(position);
+            DailySalesModel model = payment_list.get(position);
             holder.code_tv.setText(model.getCode());
             holder.name_tv.setText(model.getName());
             holder.quantity_tv.setText(model.getQuantity());
