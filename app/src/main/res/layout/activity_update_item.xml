@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".UpdateItem">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.01" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.01" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.99" />
+
+    <ImageView
+        android:id="@+id/backBtnToMenu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineMiddle"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintWidth_percent="0.05"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toTopOf="@id/guidelineTop"
+        app:srcCompat="@drawable/back_left" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Add Item"
+        android:textSize="32sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="30dp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineMiddle"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintStart_toEndOf="@id/backBtnToMenu"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTop"
+        app:layout_constraintWidth_percent="0.20"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMiddle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <TextView
+        android:id="@+id/addCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Item Code"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/guidelineMiddle"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart" />
+
+     <EditText
+        android:id="@+id/addCodeTxt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/background_view_white"
+        android:hint="Enter item code"
+        app:layout_constraintHeight_percent="0.07"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/addCode"
+        app:layout_constraintWidth_percent="0.9"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/addName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Item Name"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/addCodeTxt"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/addNameTxt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+       android:hint="Enter item name"
+        android:inputType="text"
+        android:background="@drawable/background_view_white"
+        app:layout_constraintHeight_percent="0.07"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/addName"
+        app:layout_constraintWidth_percent="0.9"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/addPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Initial Price"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/addNameTxt"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/addPriceTxt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:hint="Enter item's initial price"
+        android:inputType="number"
+        android:background="@drawable/background_view_white"
+        app:layout_constraintHeight_percent="0.07"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/addPrice"
+        app:layout_constraintWidth_percent="0.9"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/addSellingPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Selling Price"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/addPriceTxt"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/addSellingPriceTxt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:hint="Enter item selling price"
+        android:inputType="number"
+        android:background="@drawable/background_view_white"
+        app:layout_constraintHeight_percent="0.07"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/addSellingPrice"
+        app:layout_constraintWidth_percent="0.9"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/addQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Item Quantity"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/addSellingPriceTxt"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/addQuantityTxt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:hint="Enter item quantity"
+        android:inputType="number"
+        android:background="@drawable/background_view_white"
+        app:layout_constraintHeight_percent="0.07"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/addQuantity"
+        app:layout_constraintWidth_percent="0.9"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/addMinimumQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Minimum Quantity"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/addQuantityTxt"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/addMinimumQuantityTxt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:hint="Enter low stock quantity value"
+        android:inputType="number"
+        android:background="@drawable/background_view_white"
+        app:layout_constraintHeight_percent="0.07"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/addMinimumQuantity"
+        app:layout_constraintWidth_percent="0.9"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/addItemBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintHeight_percent="0.07"
+        android:textSize="26sp"
+        android:textColor="@color/white"
+        android:text="Add Item To Stock"
+        android:background="@drawable/background_view_blue"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/addMinimumQuantityTxt"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

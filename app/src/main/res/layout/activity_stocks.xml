@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Stocks">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.01" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.01" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.99" />
+
+    <ImageView
+        android:id="@+id/backBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineMiddle"
+        app:layout_constraintEnd_toStartOf="@+id/item_search"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintWidth_percent="0.05"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toTopOf="@id/guidelineTop"
+        app:srcCompat="@drawable/back_left" />
+
+    <SearchView
+        android:id="@+id/item_search"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintWidth_percent="0.60"
+        android:background="@drawable/background_view_white"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search Item"
+        app:layout_constraintBottom_toTopOf="@id/guidelineMiddle"
+        app:layout_constraintEnd_toStartOf="@+id/sortBtn"
+        app:layout_constraintStart_toEndOf="@+id/backBtn"
+        app:layout_constraintTop_toTopOf="@id/guidelineTop"
+        />
+
+    <Button
+        android:id="@+id/sortBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/background_view_white"
+        android:text="Sort"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineMiddle"
+        app:layout_constraintEnd_toStartOf="@+id/updateBtn"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintStart_toEndOf="@+id/item_search"
+        app:layout_constraintTop_toTopOf="@id/guidelineTop"
+        app:layout_constraintWidth_percent="0.1" />
+
+    <Button
+        android:id="@+id/updateBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/background_view_grey"
+        android:text="Update"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineMiddle"
+        app:layout_constraintEnd_toStartOf="@+id/printBtn"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintStart_toEndOf="@+id/sortBtn"
+        app:layout_constraintTop_toTopOf="@id/guidelineTop"
+        app:layout_constraintWidth_percent="0.1" />
+
+    <Button
+        android:id="@+id/printBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/background_view_blue"
+        android:text="Print"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineMiddle"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintStart_toEndOf="@+id/updateBtn"
+        app:layout_constraintTop_toTopOf="@id/guidelineTop"
+        app:layout_constraintWidth_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMiddle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.99" />
+
+
+
+
+    <TableLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:stretchColumns="1,2,3,4,5,6"
+        app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+        app:layout_constraintStart_toEndOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineMiddle"
+        app:layout_constraintBottom_toTopOf="@id/guidelineBottom">
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Code"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_column="1"
+                android:text="Item Name"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_column="1"
+                android:text="Initial Price"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_column="1"
+                android:text="Sale Price"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_column="1"
+                android:text="Added Date"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_column="1"
+                android:text="Quantity"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_manage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
