@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "571513251688",
+    "project_id": "stock-management-and-pos-app",
+    "storage_bucket": "stock-management-and-pos-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571513251688:android:615169e29f91f5a30458dd",
+        "android_client_info": {
+          "package_name": "com.mobdev.possystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "571513251688-2d8f1nekfqome4e91fcko61sf49n11e2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtY4IeH4NJztRvrJCP6689pnk8C6Y723U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "571513251688-2d8f1nekfqome4e91fcko61sf49n11e2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
