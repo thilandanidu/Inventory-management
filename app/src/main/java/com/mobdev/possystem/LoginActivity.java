@@ -23,72 +23,72 @@ import org.jetbrains.annotations.NotNull;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText mEmail, mPassword;
-    private Button mLoginBtn;
-    private FirebaseAuth fAuth;
-    ProgressBar progressBar;
+    private EditText eName;
+    private EditText ePassword;
+    private Button eLogin;
+
+    String userName = "";
+    String userPassword = "";
+
+    /* Class to hold credentials */
+    class Credentials
+    {
+        String name = "Admin";
+        String password = "123456";
+    }
+
+    boolean isValid = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_main);
 
-        mEmail = findViewById(R.id.editTextName);
-        mPassword = findViewById(R.id.editTextTextPassword);
-        mLoginBtn = findViewById(R.id.buttonSignIn);
-        progressBar = findViewById(R.id.progressBar);
-        fAuth = FirebaseAuth.getInstance();
+        /* Bind the XML views to Java Code Elements */
+        eName = findViewById(R.id.editTextName);
+        ePassword = findViewById(R.id.editTextTextPassword);
+        eLogin = findViewById(R.id.buttonSignIn);
 
-        mLoginBtn.setOnClickListener(new View.OnClickListener() {
+
+        eLogin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                String email = mEmail.getText().toString().trim();
-                String password = mPassword.getText().toString().trim();
+            public void onClick(View view) {
 
-                if (TextUtils.isEmpty(email)) {
-                    mEmail.setError("Email is Required");
-                    return;
+                userName = eName.getText().toString();
+                userPassword = ePassword.getText().toString();
+
+                if(userName.isEmpty() || userPassword.isEmpty())
+                {
+                    Toast.makeText(LoginActivity.this, "Please enter name and password!", Toast.LENGTH_LONG).show();
+
+                }else {
+
+                    isValid = validate(userName, userPassword);
+
+
+                    if (!isValid) {
+                            Toast.makeText(LoginActivity.this, "Incorrect credentials, please try again!", Toast.LENGTH_LONG).show();
+                        }
+
+                    else {
+                        Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_LONG).show();
+//                        startActivity(new Intent(LoginActivity.this, ShopOwnerHomeActivity.class));
+                    }
 
                 }
-                if (TextUtils.isEmpty(password)) {
-                    mPassword.setError("Password is Required");
-                    return;
-                }
-                if (password.length() < 6) {
-                    mPassword.setError("Password  Must be >= 6 Characters");
-                }
-
-                progressBar.setVisibility(View.VISIBLE);
-
-                //authenticate the user
-
-                fAuth.signInWithEmailAndPassword(email, password).
-                        addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(LoginActivity.this,
-                                            "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(LoginActivity.this, LoginActivity.class));
-                                } else {
-                                    Toast.makeText(LoginActivity.this,
-                                            "Error !" + task.getException().getMessage(), Toast.LENGTH_SHORT)
-                                            .show();
-                                    progressBar.setVisibility(View.GONE);
-
-                                }
-                            }
-                        });
             }
         });
+    }
 
-        mLoginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext().LoginActivity.class));
-            }
-        });
+    private boolean validate(String userName, String userPassword)
+    {
+        Credentials credentials = new Credentials();
 
+        if(userName.equals(credentials.name) && userPassword.equals(credentials.password))
+        {
+            return true;
+        }
 
+        return false;
     }
 }
