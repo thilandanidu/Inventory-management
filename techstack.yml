@@ -1,0 +1,20 @@
+repo_name: thilandanidu/Inventory-management
+report_id: 0d1ced1190a1e9c20b26a245646592c9
+version: 0.1
+repo_type: Public
+timestamp: '2024-01-26T04:54:58+00:00'
+requested_by: Inventory-Management-App
+provider: github
+branch: main
+detected_tools_count: 1
+tools:
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/thilandanidu/Inventory-management
+  detection_source: Repo Metadata
